@@ -103,11 +103,10 @@ h6 {
 
 body {
   min-width: 320px;
-  min-height: 100vh;
-  /* font: ${({ theme }) => theme.fontWeights.light} ${({ theme }) =>
-   theme.fontSizes.bodyLarge}/1.6 'Outfit', sans-serif;
-   color: ${({ theme }) => theme.colors.black}; */
-  /* background-color: ${({ theme }) => theme.colors.white}; */
+  min-height: 100vh; // todo
+  font: ${({ theme }) => theme.fontWeights.light} ${({ theme }) =>
+   theme.fontSizes.body}/1.6 'League Spartan', sans-serif;
+   color: ${({ theme }) => theme.colors.black};
 }
 
 &:focus {

@@ -1,7 +1,7 @@
 export const fontSizes = {
-   bodySmall: '13px',
-   bodyLarge: '15px',
-   headingXs: '18px',
-   headingSm: '24px',
-   headingLarge: '32px',
+   body: '18px',
+   headingSmall: '32px',
+   headingMedium: '72px',
+   headingLarge: '96px',
+   headingExtraLarge: '250px',
 };
