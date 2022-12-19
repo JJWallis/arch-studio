@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
          <main id="main">
             <Component {...pageProps} />
          </main>
+         <footer></footer>
       </ThemeProvider>
    );
 }

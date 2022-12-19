@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { device } from '../../config/theme/device';
 
 const GlobalStyles = createGlobalStyle`
 *,
@@ -13,8 +12,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html, 
-body,
-#__next {
+body {
   height: 100%;
 }
 
@@ -104,38 +102,48 @@ h6 {
 
 :root {
   /* font sizes */
-  --fs-body: ${({ theme }) => theme.fontSizes.body}
-  --fs-heading-small: ${({ theme }) => theme.fontSizes.headingSmall}
-  --fs-heading-medium: ${({ theme }) => theme.fontSizes.headingMedium}
-  --fs-heading-large: ${({ theme }) => theme.fontSizes.headingLarge}
-  --fs-heading-xl: ${({ theme }) => theme.fontSizes.headingExtraLarge}
+  --fs-body: ${({ theme }) => theme.fontSizes.body};
+  --fs-heading-small: ${({ theme }) => theme.fontSizes.headingSmall};
+  --fs-heading-medium: ${({ theme }) => theme.fontSizes.headingMedium};
+  --fs-heading-large: ${({ theme }) => theme.fontSizes.headingLarge};
+  --fs-heading-xl: ${({ theme }) => theme.fontSizes.headingExtraLarge};
 
   /* font weights */
-  --fw-light: ${({ theme }) => theme.fontWeights.light}
-  --fw-medium: ${({ theme }) => theme.fontWeights.medium}
-  --fw-bold: ${({ theme }) => theme.fontWeights.bold}
+  --fw-light: ${({ theme }) => theme.fontWeights.light};
+  --fw-medium: ${({ theme }) => theme.fontWeights.medium};
+  --fw-bold: ${({ theme }) => theme.fontWeights.bold};
 
   /* line heights */
-  --lh-body: ${({ theme }) => theme.lineHeights.body}
-  --lh-heading-small: ${({ theme }) => theme.lineHeights.headingSmall}
-  --lh-heading-medium: ${({ theme }) => theme.lineHeights.headingMedium}
-  --lh-heading-large: ${({ theme }) => theme.lineHeights.headingLarge}
-  --lh-heading-xl: ${({ theme }) => theme.lineHeights.headingExtraLarge}
+  --lh-body: ${({ theme }) => theme.lineHeights.body};
+  --lh-heading-small: ${({ theme }) => theme.lineHeights.headingSmall};
+  --lh-heading-medium: ${({ theme }) => theme.lineHeights.headingMedium};
+  --lh-heading-large: ${({ theme }) => theme.lineHeights.headingLarge};
+  --lh-heading-xl: ${({ theme }) => theme.lineHeights.headingExtraLarge};
 
   /* colors */
-  --clr-white: ${({ theme }) => theme.colors.white}
-  --clr-light-grey: ${({ theme }) => theme.colors.lightGrey}
-  --clr-mild-grey: ${({ theme }) => theme.colors.mildGrey}
-  --clr-dark-grey: ${({ theme }) => theme.colors.darkGrey}
-  --clr-black: ${({ theme }) => theme.colors.black}
+  --clr-white: ${({ theme }) => theme.colors.white};
+  --clr-light-grey: ${({ theme }) => theme.colors.lightGrey};
+  --clr-mild-grey: ${({ theme }) => theme.colors.mildGrey};
+  --clr-dark-grey: ${({ theme }) => theme.colors.darkGrey};
+  --clr-black: ${({ theme }) => theme.colors.black};
 }
 
 body {
   min-width: 320px;
-  min-height: 100vh;
-  font: ${({ theme }) => theme.fontWeights.light} ${({ theme }) =>
-   theme.fontSizes.body}/1.6 'League Spartan', sans-serif;
-   color: ${({ theme }) => theme.colors.black};
+  font: var(--fw-light) var(--fs-body)/var(--lh-body) 'League Spartan', sans-serif;
+  color: var(--clr-black);
+}
+
+/* sticky footer */
+
+#__next {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
 }
 
 &:focus {
