@@ -1,7 +1,7 @@
 export const lineHeights = {
-   body: '24px',
-   headingSmall: '40px',
-   headingMedium: '64px',
-   headingLarge: '80px',
-   headingExtraLarge: '200px',
+   body: 1.333,
+   headingSmall: 1.25,
+   headingMedium: 0.889,
+   headingLarge: 0.833,
+   headingExtraLarge: 0.8,
 };

@@ -1,7 +1,7 @@
 import { breakPoints } from './breakpoints';
 
-const minWidth = (val: number) => `(min-width: ${val}px)`;
-const maxWidth = (val: number) => `(max-width: ${val - 1}px)`;
+const minWidth = (val: number) => `(min-width: ${val / 16}rem)`;
+const maxWidth = (val: number) => `(max-width: ${(val - 1) / 16}rem)`;
 
 export const device = {
    mobileS: minWidth(breakPoints.mobileS),
