@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import Hamburger from '../hamburger';
 import Navigation from '../navigation';
+import { NavigationListItem } from '../navigation/NavigationListItem';
 import { HeaderPrimary } from './Header.styled';
 
 const Header: React.FC = () => {
@@ -18,13 +19,15 @@ const Header: React.FC = () => {
                />
             </svg>
          </Link>
-         <Navigation>
-            <li>l</li>
-         </Navigation>
          <Hamburger
             isMobileNavVisible={isMobileNavVisible}
             toggleMobileNav={toggleMobileNav}
          />
+         <Navigation>
+            <NavigationListItem href="/portfolio">Portfolio</NavigationListItem>
+            <NavigationListItem href="/about-us">About Us</NavigationListItem>
+            <NavigationListItem href="/contact">Contact</NavigationListItem>
+         </Navigation>
       </HeaderPrimary>
    );
 };

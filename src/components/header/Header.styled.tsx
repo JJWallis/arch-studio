@@ -12,6 +12,6 @@ export const HeaderPrimary = styled.header<HeaderPrimaryProps>`
    justify-content: space-between;
    align-items: center;
    padding: 30px ${MOBILE_PADDING};
-   --mobile-nav-display: ${({ isMobileNavVisible }) =>
-      isMobileNavVisible ? '0' : '-100%'};
+   --mobile-nav-transform: ${({ isMobileNavVisible }) =>
+      isMobileNavVisible ? '0' : '100%'};
 `;

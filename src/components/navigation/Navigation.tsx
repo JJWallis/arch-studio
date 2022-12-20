@@ -1,6 +1,6 @@
 import React from 'react';
 import { MOBILE_NAVIGATION } from '../../constants/ids';
-import { MobileNavigation, MobileNavigationList } from './Navigation.styled';
+import { NavigationPrimary, MobileNavigationList } from './Navigation.styled';
 
 interface Props {
    children: React.ReactNode;
@@ -8,11 +8,11 @@ interface Props {
 
 const Navigation: React.FC<Props> = ({ children }) => {
    return (
-      <MobileNavigation>
+      <NavigationPrimary>
          <MobileNavigationList id={MOBILE_NAVIGATION}>
             {children}
          </MobileNavigationList>
-      </MobileNavigation>
+      </NavigationPrimary>
    );
 };
 

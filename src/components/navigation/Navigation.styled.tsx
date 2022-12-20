@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { device } from '../../config/theme/device';
 import { MOBILE_PADDING } from '../../constants/styles';
 
-export const MobileNavigation = styled.nav`
+export const NavigationPrimary = styled.nav`
    @media ${device.maxTablet} {
       position: absolute;
       top: 100%;
@@ -12,6 +12,8 @@ export const MobileNavigation = styled.nav`
       padding: 30px;
       z-index: 100;
       background-color: var(--clr-mild-grey);
+      transform: translateX(var(--mobile-nav-transform));
+      transition: transform 300ms ease-in-out;
    }
 `;
 
