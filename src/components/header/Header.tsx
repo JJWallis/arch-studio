@@ -1,11 +1,15 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
+import Hamburger from '../hamburger';
+import Navigation from '../navigation';
 import { HeaderPrimary } from './Header.styled';
 
 const Header: React.FC = () => {
-   const [] = useState();
+   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+   const toggleMobileNav = () => setIsMobileNavVisible(!isMobileNavVisible);
+
    return (
-      <HeaderPrimary>
+      <HeaderPrimary isMobileNavVisible={isMobileNavVisible}>
          <Link href="/">
             <svg xmlns="http://www.w3.org/2000/svg" width="97" height="40">
                <path
@@ -14,13 +18,13 @@ const Header: React.FC = () => {
                />
             </svg>
          </Link>
-         <button aria-label="mobile navigation" aria-expanded={false}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
-               <g fill="#1B1D23" fill-rule="evenodd">
-                  <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
-               </g>
-            </svg>
-         </button>
+         <Navigation>
+            <li>l</li>
+         </Navigation>
+         <Hamburger
+            isMobileNavVisible={isMobileNavVisible}
+            toggleMobileNav={toggleMobileNav}
+         />
       </HeaderPrimary>
    );
 };

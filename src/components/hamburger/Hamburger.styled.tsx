@@ -1,2 +1,5 @@
-import styled, { css } from 'styled-components';
-import { device } from '../../config/theme/device';
+import styled from 'styled-components';
+
+export const HamburgerButton = styled.button`
+   cursor: pointer;
+`;
