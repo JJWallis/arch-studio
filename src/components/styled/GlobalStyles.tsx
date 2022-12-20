@@ -122,11 +122,12 @@ h6 {
   --lh-heading-xl: ${({ theme }) => theme.lineHeights.headingExtraLarge};
 
   /* colors */
-  --clr-white: ${({ theme }) => theme.colors.white};
+  --clr-very-light-grey: ${({ theme }) => theme.colors.veryLightGrey};
   --clr-light-grey: ${({ theme }) => theme.colors.lightGrey};
   --clr-mild-grey: ${({ theme }) => theme.colors.mildGrey};
   --clr-dark-grey: ${({ theme }) => theme.colors.darkGrey};
-  --clr-black: ${({ theme }) => theme.colors.black};
+  --clr-dark-blue: ${({ theme }) => theme.colors.darkBlue};
+  --clr-red: ${({ theme }) => theme.colors.red};
 
   /* layout */
 
@@ -137,15 +138,20 @@ h6 {
     --site-padding: 100px;
   }
 
-  @media ${device.laptop} {
-    --site-padding: 0;
+  @media ${device.laptopL} {
+    --site-padding: 165px;
   }
 }
 
 body {
   min-width: 320px;
   font: var(--fw-light) var(--fs-body)/var(--lh-body) 'League Spartan', sans-serif;
-  color: var(--clr-black);
+  color: var(--clr-dark-blue);
+
+  @media ${device.tablet} {
+    padding-left: var(--site-padding);
+    padding-right: var(--site-padding);
+  }
 }
 
 /* sticky footer */

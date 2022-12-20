@@ -1,7 +1,8 @@
 export const palette = {
-   white: '#FFFFFF',
-   lightGrey: '#F3F3F3',
-   mildGrey: '#E5E5E5',
-   darkGrey: '#7D7D7D',
-   black: '#000000',
+   veryLightGrey: '#EEEFF4',
+   lightGrey: '#C8CCD8',
+   mildGrey: '#7D828F',
+   darkGrey: '#60636D',
+   darkBlue: '#1B1D23',
+   red: '#DF5656',
 };

@@ -9,7 +9,7 @@ export const NavigationLink = styled(Link)`
    @media ${device.maxTablet} {
       display: block;
       padding-block: 10px;
-      color: var(--clr-black);
+      color: var(--clr-dark-blue);
       font-size: var(--fs-heading-small);
       font-weight: var(--fw-bold);
    }

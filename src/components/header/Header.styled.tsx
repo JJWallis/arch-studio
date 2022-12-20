@@ -7,18 +7,25 @@ interface HeaderPrimaryProps {
 }
 
 export const HeaderPrimary = styled.header<HeaderPrimaryProps>`
-   --justify-content: space-between;
-   border: 2px solid black;
+   --mobile-nav-transform: ${({ isMobileNavVisible }) =>
+      isMobileNavVisible ? '0' : '110%'};
+
+   outline: 2px solid black;
    position: relative;
+   padding-block: 30px;
+
+   @media ${device.maxTablet} {
+      padding-inline: var(--site-padding);
+   }
+`;
+
+export const HeaderPrimaryContent = styled.div`
+   --justify-content: space-between;
    display: flex;
    justify-content: var(--justify-content);
    align-items: center;
-   padding: 30px var(--site-padding);
-   width: 100%;
    max-width: var(--site-max-width);
    margin: 0 auto;
-   --mobile-nav-transform: ${({ isMobileNavVisible }) =>
-      isMobileNavVisible ? '0' : '100%'};
 
    @media ${device.tablet} {
       --justify-content: flex-start;
