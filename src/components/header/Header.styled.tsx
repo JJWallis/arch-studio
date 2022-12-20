@@ -11,7 +11,6 @@ export const HeaderPrimary = styled.header<HeaderPrimaryProps>`
    --mobile-nav-transform: ${({ isMobileNavVisible }) =>
       isMobileNavVisible ? '0' : '100%'};
 
-   outline: 2px solid black;
    position: relative;
    padding-block: 30px;
 

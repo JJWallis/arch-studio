@@ -12,7 +12,7 @@ export const NavigationPrimary = styled.nav`
       max-width: 450px;
       padding: 30px;
       z-index: ${Z_INDEX_MOBILE_NAV};
-      background-color: var(--clr-mild-grey);
+      background-color: var(--clr-very-light-grey);
       transform: translateX(var(--mobile-nav-transform));
       transition: transform 300ms ease-in-out;
    }
