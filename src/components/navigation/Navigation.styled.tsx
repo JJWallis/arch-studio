@@ -9,7 +9,7 @@ export const NavigationPrimary = styled.nav`
       top: 100%;
       right: 0;
       width: calc(100% - var(--site-padding));
-      max-width: 400px;
+      max-width: 450px;
       padding: 30px;
       z-index: ${Z_INDEX_MOBILE_NAV};
       background-color: var(--clr-mild-grey);

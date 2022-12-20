@@ -105,6 +105,8 @@ h6 {
   /* font sizes */
   --fs-body: ${({ theme }) => theme.fontSizes.body};
   --fs-heading-small: ${({ theme }) => theme.fontSizes.headingSmall};
+  --fs-heading-small-medium: ${({ theme }) =>
+     theme.fontSizes.headingSmallMedium}; 
   --fs-heading-medium: ${({ theme }) => theme.fontSizes.headingMedium};
   --fs-heading-large: ${({ theme }) => theme.fontSizes.headingLarge};
   --fs-heading-xl: ${({ theme }) => theme.fontSizes.headingExtraLarge};
@@ -144,6 +146,7 @@ h6 {
 }
 
 body {
+  overflow-x: hidden;
   min-width: 320px;
   font: var(--fw-light) var(--fs-body)/var(--lh-body) 'League Spartan', sans-serif;
   color: var(--clr-dark-blue);

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { device } from '../../config/theme/device';
 import { TABLET_NAVIGATION_GAP } from '../../constants/styles';
+import { contentWrapperStyles } from '../styled/ContentWrapperStyles';
 
 interface HeaderPrimaryProps {
    isMobileNavVisible: boolean;
@@ -8,7 +9,7 @@ interface HeaderPrimaryProps {
 
 export const HeaderPrimary = styled.header<HeaderPrimaryProps>`
    --mobile-nav-transform: ${({ isMobileNavVisible }) =>
-      isMobileNavVisible ? '0' : '110%'};
+      isMobileNavVisible ? '0' : '100%'};
 
    outline: 2px solid black;
    position: relative;
@@ -24,8 +25,7 @@ export const HeaderPrimaryContent = styled.div`
    display: flex;
    justify-content: var(--justify-content);
    align-items: center;
-   max-width: var(--site-max-width);
-   margin: 0 auto;
+   ${contentWrapperStyles}
 
    @media ${device.tablet} {
       --justify-content: flex-start;
