@@ -6,14 +6,12 @@ interface Props {
    children: React.ReactNode;
 }
 
-const Navigation: React.FC<Props> = ({ children }) => {
-   return (
-      <NavigationPrimary>
-         <MobileNavigationList id={MOBILE_NAVIGATION}>
-            {children}
-         </MobileNavigationList>
-      </NavigationPrimary>
-   );
-};
+const Navigation: React.FC<Props> = ({ children }) => (
+   <NavigationPrimary>
+      <MobileNavigationList id={MOBILE_NAVIGATION}>
+         {children}
+      </MobileNavigationList>
+   </NavigationPrimary>
+);
 
 export default Navigation;

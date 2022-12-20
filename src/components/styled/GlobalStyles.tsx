@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { device } from '../../config/theme/device';
 
 const GlobalStyles = createGlobalStyle`
 *,
@@ -126,6 +127,19 @@ h6 {
   --clr-mild-grey: ${({ theme }) => theme.colors.mildGrey};
   --clr-dark-grey: ${({ theme }) => theme.colors.darkGrey};
   --clr-black: ${({ theme }) => theme.colors.black};
+
+  /* layout */
+
+  --site-max-width: 1110px;
+  --site-padding: 25px;
+
+  @media ${device.tablet} {
+    --site-padding: 100px;
+  }
+
+  @media ${device.laptop} {
+    --site-padding: 0;
+  }
 }
 
 body {

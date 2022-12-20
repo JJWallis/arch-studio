@@ -1,1 +1,1 @@
-export const MOBILE_PADDING = '25px';
+export const TABLET_NAVIGATION_GAP = '50px';
