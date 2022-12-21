@@ -142,6 +142,7 @@ h6 {
 
   @media ${device.tablet} {
     --site-padding: 100px;
+    --image-padding: 40px;
   }
 
   @media ${device.laptopL} {

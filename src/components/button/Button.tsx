@@ -13,10 +13,12 @@ const Button = styled.button<ButtonProps>`
          --active-bg-color: var(--clr-dark-blue);
       `}
 
-   display: grid;
-   place-content: center;
-   gap: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
    padding: 20px;
+   font-weight: var(--fw-medium);
    background-color: var(--clr-dark-blue);
    color: white;
    transition: background-color 100ms ease-in-out, color 100ms ease-in-out;

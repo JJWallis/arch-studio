@@ -10,11 +10,12 @@ interface HeaderPrimaryProps {
 export const HeaderPrimary = styled.header<HeaderPrimaryProps>`
    --mobile-nav-transform: ${({ isMobileNavVisible }) =>
       isMobileNavVisible ? '0' : '100%'};
-
+   --padding-y: 50px;
    position: relative;
-   padding-block: 30px;
+   padding-block: var(--padding-y);
 
    @media ${device.maxTablet} {
+      --padding-y: 30px;
       padding-inline: var(--site-padding);
    }
 `;
