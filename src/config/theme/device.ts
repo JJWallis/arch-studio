@@ -21,6 +21,7 @@ export const device = {
    maxTabletS: maxWidth(breakPoints.tabletS),
    maxTablet: maxWidth(breakPoints.tablet),
    maxLaptop: maxWidth(breakPoints.laptop),
+   maxLaptopL: maxWidth(breakPoints.laptopL),
    maxDesktop: maxWidth(breakPoints.desktop),
    maxDesktopM: maxWidth(breakPoints.desktopM),
 };

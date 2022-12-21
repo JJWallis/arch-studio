@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import { device } from '../../config/theme/device';
+import { SLIDE_SHOW_BUTTON_WIDTH } from '../../constants/styles';
 import { ArrowAndCopyButton } from '../button/ArrowAndCopyButton';
+import { SlideshowButton } from '../button/SlideshowButton';
 
 import { contentWrapperStyles } from '../styled/ContentWrapperStyles';
 
 const Article = styled.article`
-   outline: 1px solid blue;
+   position: relative;
    display: grid;
    grid-template-columns: 1fr;
    min-height: 573px;
@@ -63,6 +65,19 @@ const Description = styled.p`
    color: white;
 `;
 
+const SlideshowButtonsContainer = styled.div`
+   --transform-amount: calc(var(--site-padding) - ${SLIDE_SHOW_BUTTON_WIDTH});
+   position: absolute;
+   left: calc(0px - ${SLIDE_SHOW_BUTTON_WIDTH});
+   bottom: 0;
+   display: flex;
+   @media ${device.maxLaptop} {
+      display: none;
+   }
+   /* transform: translateX(calc(var(--transform-amount) * -1)); */
+   /* transition: transform 100ms linear;/ */
+`;
+
 const Slideshow: React.FC = () => (
    <Article>
       <Content>
@@ -73,6 +88,12 @@ const Slideshow: React.FC = () => (
          </Description>
          <ArrowAndCopyButton>See Our Portfolio</ArrowAndCopyButton>
       </Content>
+      <SlideshowButtonsContainer>
+         <SlideshowButton isActive>1</SlideshowButton>
+         <SlideshowButton>2</SlideshowButton>
+         <SlideshowButton>3</SlideshowButton>
+         <SlideshowButton>4</SlideshowButton>
+      </SlideshowButtonsContainer>
    </Article>
 );
 

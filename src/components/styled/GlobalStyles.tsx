@@ -141,12 +141,12 @@ h6 {
   --site-padding: 25px;
 
   @media ${device.tablet} {
-    --site-padding: 100px;
+    --site-padding: clamp(40px, 14vw, 165px);
     --image-padding: 40px;
   }
 
-  @media ${device.laptopL} {
-    --site-padding: 165px;
+  @media ${device.laptop} {
+    /* --site-padding: 165px; */
   }
 }
 
