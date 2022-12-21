@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../../config/theme/device';
+import { StyledButton } from '../styled/Button';
 import { contentWrapperStyles } from '../styled/ContentWrapperStyles';
 
 const Article = styled.article`
@@ -19,7 +20,8 @@ const Article = styled.article`
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.3);
-      grid-area: 1 / -1;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
    }
 `;
 
@@ -31,8 +33,11 @@ const Title = styled.h1`
 `;
 
 const Content = styled.div`
-   grid-area: 1 / -1;
+   grid-column: 1 / -1;
+   grid-row: 1 / -1;
    align-self: center;
+   max-width: 600px;
+   margin-inline: auto;
    padding-block: 10px;
    @media ${device.maxTablet} {
       padding-inline: var(--site-padding);
@@ -52,7 +57,7 @@ const Slideshow: React.FC = () => (
             Project made for an art museum near Southwest London. Project
             Paramour is a statement of bold, modern architecture.
          </SubTitle>
-         <button>See Our Portfolio</button>
+         <StyledButton>See Our Portfolio</StyledButton>
       </Content>
    </Article>
 );
