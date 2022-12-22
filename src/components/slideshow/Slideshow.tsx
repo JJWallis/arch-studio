@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import { device } from '../../config/theme/device';
 import { SLIDE_SHOW_BUTTON_WIDTH } from '../../constants/styles';
@@ -71,30 +72,54 @@ const SlideshowButtonsContainer = styled.div`
    left: calc(0px - ${SLIDE_SHOW_BUTTON_WIDTH});
    bottom: 0;
    display: flex;
+   overflow: hidden;
    @media ${device.maxLaptop} {
       display: none;
    }
-   /* transform: translateX(calc(var(--transform-amount) * -1)); */
-   /* transition: transform 100ms linear;/ */
+
+   @keyframes slidein {
+      from {
+         transform: translateX(-100%);
+      }
+
+      to {
+         transform: translateX(0%);
+      }
+   }
+
+   animation: 0.7s slidein;
 `;
 
-const Slideshow: React.FC = () => (
-   <Article>
-      <Content>
-         <Title>Project Paramour</Title>
-         <Description>
-            Project made for an art museum near Southwest London. Project
-            Paramour is a statement of bold, modern architecture.
-         </Description>
-         <ArrowAndCopyButton>See Our Portfolio</ArrowAndCopyButton>
-      </Content>
-      <SlideshowButtonsContainer>
-         <SlideshowButton isActive>1</SlideshowButton>
-         <SlideshowButton>2</SlideshowButton>
-         <SlideshowButton>3</SlideshowButton>
-         <SlideshowButton>4</SlideshowButton>
-      </SlideshowButtonsContainer>
-   </Article>
-);
+const Slideshow: React.FC = () => {
+   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+   const slideShowValues = ['01', '02', '03', '04'];
+
+   const handleSlideShowButtonClick = (index: number) =>
+      setActiveSlideIndex(index);
+
+   return (
+      <Article>
+         <Content>
+            <Title>Project Paramour</Title>
+            <Description>
+               Project made for an art museum near Southwest London. Project
+               Paramour is a statement of bold, modern architecture.
+            </Description>
+            <ArrowAndCopyButton>See Our Portfolio</ArrowAndCopyButton>
+         </Content>
+         <SlideshowButtonsContainer>
+            {slideShowValues.map((slideShowValue, idx) => (
+               <SlideshowButton
+                  key={idx}
+                  isActive={activeSlideIndex === idx}
+                  onClick={() => handleSlideShowButtonClick(idx)}
+               >
+                  {slideShowValue}
+               </SlideshowButton>
+            ))}
+         </SlideshowButtonsContainer>
+      </Article>
+   );
+};
 
 export default Slideshow;

@@ -5,6 +5,7 @@ import { StyledButton } from './Button';
 interface SlideshowButtonProps {
    children: React.ReactNode;
    isActive?: boolean;
+   onClick: (index: number) => void;
 }
 
 interface StyledSlideshowButtonProps {
