@@ -4,6 +4,7 @@ import Hamburger from '../hamburger';
 import Navigation from '../navigation';
 import { NavigationListItem } from '../navigation/NavigationListItem';
 import { HeaderPrimary, HeaderPrimaryContent } from './Header.styled';
+import { HeaderPageHighlighter } from './HeaderPageHighlighter';
 
 const Header: React.FC = () => {
    const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
@@ -11,6 +12,7 @@ const Header: React.FC = () => {
 
    return (
       <HeaderPrimary isMobileNavVisible={isMobileNavVisible}>
+         <HeaderPageHighlighter />
          <HeaderPrimaryContent>
             <Link href="/">
                <svg xmlns="http://www.w3.org/2000/svg" width="97" height="40">
