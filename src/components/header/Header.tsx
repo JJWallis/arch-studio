@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import {
+   ROUTE_ABOUT,
+   ROUTE_CONTACT,
+   ROUTE_PORTFOLIO,
+} from '../../constants/routes';
 import Hamburger from '../hamburger';
 import Navigation from '../navigation';
 import { NavigationListItem } from '../navigation/NavigationListItem';
@@ -9,11 +15,19 @@ import { HeaderPageHighlighter } from './HeaderPageHighlighter';
 const Header: React.FC = () => {
    const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
    const toggleMobileNav = () => setIsMobileNavVisible(!isMobileNavVisible);
+   const { pathname } = useRouter();
+   const currentPageTitle =
+      {
+         '/': 'home',
+         [ROUTE_PORTFOLIO]: 'portfolio',
+         [ROUTE_ABOUT]: 'about us',
+         [ROUTE_CONTACT]: 'contact',
+      }[pathname] || '';
 
    return (
       <HeaderPrimary isMobileNavVisible={isMobileNavVisible}>
          <HeaderPrimaryContent>
-            <HeaderPageHighlighter />
+            <HeaderPageHighlighter currentPageTitle={currentPageTitle} />
             <Link href="/">
                <svg xmlns="http://www.w3.org/2000/svg" width="97" height="40">
                   <path
@@ -27,13 +41,15 @@ const Header: React.FC = () => {
                toggleMobileNav={toggleMobileNav}
             />
             <Navigation>
-               <NavigationListItem href="/portfolio">
+               <NavigationListItem href={ROUTE_PORTFOLIO}>
                   Portfolio
                </NavigationListItem>
-               <NavigationListItem href="/about-us">
+               <NavigationListItem href={ROUTE_ABOUT}>
                   About Us
                </NavigationListItem>
-               <NavigationListItem href="/contact">Contact</NavigationListItem>
+               <NavigationListItem href={ROUTE_CONTACT}>
+                  Contact
+               </NavigationListItem>
             </Navigation>
          </HeaderPrimaryContent>
       </HeaderPrimary>

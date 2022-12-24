@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { device } from '../../config/theme/device';
 import { Z_INDEX_PAGE_HIGHLIGHTER } from '../../constants/zIndex';
 
-interface Props {
+interface FlexCtProps {
    elementWidth: number;
 }
 
-const FlexCt = styled.div<Props>`
+const FlexCt = styled.div<FlexCtProps>`
    display: none;
 
    @media ${device.tablet} {
@@ -59,17 +59,23 @@ const FlexCt = styled.div<Props>`
    }
 `;
 
-export const HeaderPageHighlighter: React.FC = () => {
+interface Props {
+   currentPageTitle: string;
+}
+
+export const HeaderPageHighlighter: React.FC<Props> = ({
+   currentPageTitle,
+}) => {
    const [elementWidth, setElementWidth] = useState(0);
    const elementRef = useRef<HTMLDivElement>(null);
 
    useEffect(() => {
       if (elementRef.current) setElementWidth(elementRef.current?.offsetWidth);
-   }, []); // todo -> changes when page state changes
+   }, [currentPageTitle]);
 
    return (
       <FlexCt ref={elementRef} aria-hidden elementWidth={elementWidth}>
-         home
+         {currentPageTitle}
       </FlexCt>
    );
 };
