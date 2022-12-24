@@ -10,12 +10,12 @@ interface HeaderPrimaryProps {
 export const HeaderPrimary = styled.header<HeaderPrimaryProps>`
    --mobile-nav-transform: ${({ isMobileNavVisible }) =>
       isMobileNavVisible ? '0' : '100%'};
-   --padding-y: 50px;
+   --header-padding-y: 50px;
    position: relative;
-   padding-block: var(--padding-y);
+   padding-block: var(--header-padding-y);
 
    @media ${device.maxTablet} {
-      --padding-y: 30px;
+      --header-padding-y: 30px;
       padding-inline: var(--site-padding);
    }
 `;
@@ -29,6 +29,7 @@ export const HeaderPrimaryContent = styled.div`
 
    @media ${device.tablet} {
       --justify-content: flex-start;
+      position: relative;
       gap: ${TABLET_NAVIGATION_GAP};
    }
 `;

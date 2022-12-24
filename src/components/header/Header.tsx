@@ -12,8 +12,8 @@ const Header: React.FC = () => {
 
    return (
       <HeaderPrimary isMobileNavVisible={isMobileNavVisible}>
-         <HeaderPageHighlighter />
          <HeaderPrimaryContent>
+            <HeaderPageHighlighter />
             <Link href="/">
                <svg xmlns="http://www.w3.org/2000/svg" width="97" height="40">
                   <path
