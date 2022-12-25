@@ -41,13 +41,22 @@ const Header: React.FC = () => {
                toggleMobileNav={toggleMobileNav}
             />
             <Navigation>
-               <NavigationListItem href={ROUTE_PORTFOLIO}>
+               <NavigationListItem
+                  href={ROUTE_PORTFOLIO}
+                  aria-current={pathname === ROUTE_PORTFOLIO}
+               >
                   Portfolio
                </NavigationListItem>
-               <NavigationListItem href={ROUTE_ABOUT}>
+               <NavigationListItem
+                  href={ROUTE_ABOUT}
+                  aria-current={pathname === ROUTE_ABOUT}
+               >
                   About Us
                </NavigationListItem>
-               <NavigationListItem href={ROUTE_CONTACT}>
+               <NavigationListItem
+                  href={ROUTE_CONTACT}
+                  aria-current={pathname === ROUTE_CONTACT}
+               >
                   Contact
                </NavigationListItem>
             </Navigation>
