@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import Slideshow from '../components/slideshow/Slideshow';
+import { SingleImageSectionHeroHomeRenderer } from '../components/singleImageSection/SingleImageSectionHeroHomeRenderer';
 
 const Home: NextPage = () => {
-   return <Slideshow />;
+   return <SingleImageSectionHeroHomeRenderer />;
 };
 
 export default Home;
