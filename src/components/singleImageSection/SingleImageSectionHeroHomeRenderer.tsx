@@ -9,10 +9,10 @@ import Slideshow from '../slideshow/Slideshow';
 export const SingleImageSectionHeroHomeRenderer = () => {
    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
    const imageNames = [
-      'image-hero-paramour.jpg',
-      'image-hero-seraph.jpg',
-      'image-hero-federal.jpg',
-      'image-hero-trinity.jpg',
+      'paramour.jpg',
+      'seraph.jpg',
+      'federal.jpg',
+      'trinity.jpg',
    ];
    const currentImageName = imageNames[activeSlideIndex];
 
@@ -22,8 +22,8 @@ export const SingleImageSectionHeroHomeRenderer = () => {
    return (
       <SingleImageSection
          isPrimaryVariant
-         imageSourceMobile={`/assets/home/tablet/${currentImageName}`}
-         imageSourceDesktop={`/assets/home/desktop/${currentImageName}`}
+         imageSourceMobile={`/assets/home/tablet/image-hero-${currentImageName}`}
+         imageSourceDesktop={`/assets/home/desktop/image-hero-${currentImageName}`}
       >
          {((currentIndex) => {
             switch (currentIndex) {
