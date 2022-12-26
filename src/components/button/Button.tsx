@@ -1,18 +1,12 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { SLIDE_SHOW_BUTTON_WIDTH } from '../../constants/styles';
+import { SlideshowButtonsContainer } from '../carouselButtons/Slideshow';
 
 interface ButtonProps {
-   isSlideShowVariant?: boolean;
+   isActive?: boolean;
 }
 
 const Button = styled.button<ButtonProps>`
-   ${({ isSlideShowVariant }) =>
-      isSlideShowVariant &&
-      css`
-         --hover-fg-color: var(--clr-dark-grey);
-         --hover-bg-color: var(--clr-light-grey);
-         --active-bg-color: var(--clr-dark-blue);
-      `}
-
    display: flex;
    justify-content: center;
    align-items: center;
@@ -25,19 +19,37 @@ const Button = styled.button<ButtonProps>`
    cursor: pointer;
 
    &:hover {
-      color: var(--hover-fg-color, white);
-      background-color: var(--hover-bg-color, var(--clr-dark-grey));
+      color: white;
+      background-color: var(--clr-dark-grey);
    }
 
    &:active {
       color: white;
-      background-color: var(--active-bg-color, var(--clr-light-grey));
+      background-color: var(--clr-light-grey);
+   }
+
+   ${SlideshowButtonsContainer} & {
+      width: ${SLIDE_SHOW_BUTTON_WIDTH};
+      height: ${SLIDE_SHOW_BUTTON_WIDTH};
+      padding: 0;
+      color: ${({ isActive }) => (isActive ? 'white' : 'black')};
+      background-color: ${({ isActive }) => (isActive ? 'black' : 'white')};
+
+      &:hover {
+         color: var(--clr-dark-grey);
+         background-color: var(--clr-light-grey);
+      }
+
+      &:active {
+         background-color: var(--clr-dark-blue);
+      }
    }
 `;
 
 interface StyledButtonProps {
    children: React.ReactNode;
-   isSlideShowVariant?: boolean;
+   isActive?: boolean;
+   onClick: () => void;
 }
 
 export const StyledButton: React.FC<StyledButtonProps> = ({

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { device } from '../../config/theme/device';
 import { SLIDE_SHOW_BUTTON_WIDTH } from '../../constants/styles';
-import { SlideshowButton } from '../button/SlideshowButton';
+import { CarouselButton } from './CarouselButton';
 
-const SlideshowButtonsContainer = styled.div`
+export const SlideshowButtonsContainer = styled.div`
    --transform-amount: calc(var(--site-padding) - ${SLIDE_SHOW_BUTTON_WIDTH});
    position: absolute;
    left: calc(0px - ${SLIDE_SHOW_BUTTON_WIDTH});
@@ -36,19 +36,25 @@ const Slideshow: React.FC<Props> = ({
    activeIndex,
    handleSlideShowButtonClick,
 }) => {
-   const slideShowValues = ['01', '02', '03', '04'];
+   const carouselButtonProps = {
+      activeIndex: activeIndex,
+      handleSlideShowButtonClick: handleSlideShowButtonClick,
+   };
 
    return (
       <SlideshowButtonsContainer>
-         {slideShowValues.map((slideShowValue, idx) => (
-            <SlideshowButton
-               key={idx}
-               isActive={idx === activeIndex}
-               onClick={() => handleSlideShowButtonClick(idx)}
-            >
-               {slideShowValue}
-            </SlideshowButton>
-         ))}
+         <CarouselButton {...carouselButtonProps} targetIndex={0}>
+            01
+         </CarouselButton>
+         <CarouselButton {...carouselButtonProps} targetIndex={1}>
+            02
+         </CarouselButton>
+         <CarouselButton {...carouselButtonProps} targetIndex={2}>
+            03
+         </CarouselButton>
+         <CarouselButton {...carouselButtonProps} targetIndex={3}>
+            04
+         </CarouselButton>
       </SlideshowButtonsContainer>
    );
 };
