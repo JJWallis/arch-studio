@@ -37,8 +37,8 @@ const Slideshow: React.FC<Props> = ({
    handleSlideShowButtonClick,
 }) => {
    const carouselButtonProps = {
-      activeIndex: activeIndex,
-      handleSlideShowButtonClick: handleSlideShowButtonClick,
+      activeIndex,
+      handleSlideShowButtonClick,
    };
 
    return (

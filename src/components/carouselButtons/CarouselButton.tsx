@@ -14,7 +14,7 @@ export const CarouselButton: React.FC<Props> = ({
    handleSlideShowButtonClick,
 }) => (
    <StyledButton
-      isActive={activeIndex === targetIndex}
+      $isActive={activeIndex === targetIndex}
       onClick={() => handleSlideShowButtonClick(targetIndex)}
    >
       {children}

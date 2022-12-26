@@ -3,7 +3,7 @@ import { SLIDE_SHOW_BUTTON_WIDTH } from '../../constants/styles';
 import { SlideshowButtonsContainer } from '../carouselButtons/Slideshow';
 
 interface ButtonProps {
-   isActive?: boolean;
+   $isActive?: boolean;
 }
 
 const Button = styled.button<ButtonProps>`
@@ -32,8 +32,8 @@ const Button = styled.button<ButtonProps>`
       width: ${SLIDE_SHOW_BUTTON_WIDTH};
       height: ${SLIDE_SHOW_BUTTON_WIDTH};
       padding: 0;
-      color: ${({ isActive }) => (isActive ? 'white' : 'black')};
-      background-color: ${({ isActive }) => (isActive ? 'black' : 'white')};
+      color: ${({ $isActive }) => ($isActive ? 'white' : 'red')};
+      background-color: ${({ $isActive }) => ($isActive ? 'black' : 'blue')};
 
       &:hover {
          color: var(--clr-dark-grey);
@@ -48,7 +48,7 @@ const Button = styled.button<ButtonProps>`
 
 interface StyledButtonProps {
    children: React.ReactNode;
-   isActive?: boolean;
+   $isActive?: boolean;
    onClick: () => void;
 }
 
