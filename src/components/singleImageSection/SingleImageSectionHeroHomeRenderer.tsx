@@ -8,6 +8,13 @@ import Slideshow from '../slideshow/Slideshow';
 
 export const SingleImageSectionHeroHomeRenderer = () => {
    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+   const imageNames = [
+      'image-hero-paramour.jpg',
+      'image-hero-seraph.jpg',
+      'image-hero-federal.jpg',
+      'image-hero-trinity.jpg',
+   ];
+   const currentImageName = imageNames[activeSlideIndex];
 
    const handleSlideShowButtonClick = (targetIndex: number) =>
       setActiveSlideIndex(targetIndex);
@@ -15,11 +22,8 @@ export const SingleImageSectionHeroHomeRenderer = () => {
    return (
       <SingleImageSection
          isPrimaryVariant
-         imageSourceMobile="/assets/home/tablet/image-hero-paramour.jpg"
-         imageSourceDesktop="/assets/home/desktop/image-hero-paramour.jpg"
-         //  image-hero-seraph.jpg
-         //  image-hero-federal.jpg
-         //  image-hero-trinity.jpg
+         imageSourceMobile={`/assets/home/tablet/${currentImageName}`}
+         imageSourceDesktop={`/assets/home/desktop/${currentImageName}`}
       >
          {((currentIndex) => {
             switch (currentIndex) {
