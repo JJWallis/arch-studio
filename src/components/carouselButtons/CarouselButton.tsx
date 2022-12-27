@@ -1,4 +1,4 @@
-import { StyledButton } from '../button/Button';
+import { StyledCarouselButton } from './CarouselButton.styled';
 
 interface Props {
    children: React.ReactNode;
@@ -13,10 +13,10 @@ export const CarouselButton: React.FC<Props> = ({
    targetIndex,
    handleSlideShowButtonClick,
 }) => (
-   <StyledButton
+   <StyledCarouselButton
       $isActive={activeIndex === targetIndex}
       onClick={() => handleSlideShowButtonClick(targetIndex)}
    >
       {children}
-   </StyledButton>
+   </StyledCarouselButton>
 );

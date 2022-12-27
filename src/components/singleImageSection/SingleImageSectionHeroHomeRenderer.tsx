@@ -4,7 +4,7 @@ import { SingleImageSectionSeraph } from './SingleImageSectionSeraph';
 import { SingleImageSectionFederal } from './SingleImageSectionFederal';
 import { SingleImageSectionTrinity } from './SingleImageSectionTrinity';
 import { SingleImageSection } from './SingleImageSection';
-import Slideshow from '../carouselButtons/Slideshow';
+import CarouselButtons from '../carouselButtons/CarouselButtons';
 
 export const SingleImageSectionHeroHomeRenderer = () => {
    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -39,7 +39,7 @@ export const SingleImageSectionHeroHomeRenderer = () => {
                   return null;
             }
          })(activeSlideIndex)}
-         <Slideshow
+         <CarouselButtons
             activeIndex={activeSlideIndex}
             handleSlideShowButtonClick={handleSlideShowButtonClick}
          />

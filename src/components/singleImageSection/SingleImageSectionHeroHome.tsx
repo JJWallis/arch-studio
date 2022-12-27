@@ -1,3 +1,4 @@
+import { ROUTE_PORTFOLIO } from '../../constants/routes';
 import { ArrowAndCopyButton } from '../button/ArrowAndCopyButton';
 import { Content, Description, Title } from './SingleImageSection.styled';
 
@@ -13,6 +14,8 @@ export const SingleImageSectionHeroHome: React.FC<Props> = ({
    <Content>
       <Title>{titleContent}</Title>
       <Description>{descriptionContent}</Description>
-      <ArrowAndCopyButton>See Our Portfolio</ArrowAndCopyButton>
+      <ArrowAndCopyButton href={ROUTE_PORTFOLIO}>
+         See Our Portfolio
+      </ArrowAndCopyButton>
    </Content>
 );

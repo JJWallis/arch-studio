@@ -1,12 +1,6 @@
 import styled from 'styled-components';
-import { SLIDE_SHOW_BUTTON_WIDTH } from '../../constants/styles';
-import { SlideshowButtonsContainer } from '../carouselButtons/Slideshow';
 
-interface ButtonProps {
-   $isActive?: boolean;
-}
-
-const Button = styled.button<ButtonProps>`
+export const Button = styled.button`
    display: flex;
    justify-content: center;
    align-items: center;
@@ -27,32 +21,4 @@ const Button = styled.button<ButtonProps>`
       color: white;
       background-color: var(--clr-light-grey);
    }
-
-   ${SlideshowButtonsContainer} & {
-      width: ${SLIDE_SHOW_BUTTON_WIDTH};
-      height: ${SLIDE_SHOW_BUTTON_WIDTH};
-      padding: 0;
-      color: ${({ $isActive }) => ($isActive ? 'white' : 'red')};
-      background-color: ${({ $isActive }) => ($isActive ? 'black' : 'blue')};
-
-      &:hover {
-         color: var(--clr-dark-grey);
-         background-color: var(--clr-light-grey);
-      }
-
-      &:active {
-         background-color: var(--clr-dark-blue);
-      }
-   }
 `;
-
-interface StyledButtonProps {
-   children: React.ReactNode;
-   $isActive?: boolean;
-   onClick: () => void;
-}
-
-export const StyledButton: React.FC<StyledButtonProps> = ({
-   children,
-   ...props
-}) => <Button {...props}>{children}</Button>;
