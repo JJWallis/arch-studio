@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { SingleImageSectionParamour } from '../../components/singleImageSection/SingleImageSectionParamour';
 import { SingleImageSectionSeraph } from './SingleImageSectionSeraph';
 import { SingleImageSectionFederal } from './SingleImageSectionFederal';
@@ -16,8 +16,10 @@ export const SingleImageSectionHeroHomeRenderer = () => {
    ];
    const currentImageName = imageNames[activeSlideIndex];
 
-   const handleSlideShowButtonClick = (targetIndex: number) =>
-      setActiveSlideIndex(targetIndex);
+   const handleSlideShowButtonClick = useCallback(
+      (targetIndex: number) => setActiveSlideIndex(targetIndex),
+      []
+   );
 
    return (
       <SingleImageSection

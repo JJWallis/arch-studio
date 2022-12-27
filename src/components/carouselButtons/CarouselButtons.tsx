@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { CarouselButton } from './CarouselButton';
 import { CarouselButtonsContainer } from './CarouselButtons.styled';
 
@@ -33,4 +34,4 @@ const CarouselButtons: React.FC<Props> = ({
    );
 };
 
-export default CarouselButtons;
+export default memo(CarouselButtons);

@@ -2,7 +2,11 @@ import type { NextPage } from 'next';
 import { SingleImageSectionHeroHomeRenderer } from '../components/singleImageSection/SingleImageSectionHeroHomeRenderer';
 
 const Home: NextPage = () => {
-   return <SingleImageSectionHeroHomeRenderer />;
+   return (
+      <>
+         <SingleImageSectionHeroHomeRenderer />
+      </>
+   );
 };
 
 export default Home;
