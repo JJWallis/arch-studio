@@ -1,6 +1,9 @@
 import styled, { css } from 'styled-components';
 import { SLIDE_SHOW_BUTTON_WIDTH } from '../../constants/styles';
-import { GenericFunction } from '../../types/globalTypes';
+import {
+   StyledButtonProps,
+   StyledCarouselButtonProps,
+} from './StyledButton.types';
 
 export const Button = styled.button`
    display: flex;
@@ -25,8 +28,6 @@ export const Button = styled.button`
    }
 `;
 
-type StyledCarouselButtonProps = StyledButtonProps;
-
 const StyledCarouselButton = styled(Button)<StyledCarouselButtonProps>`
    ${({ $isActive }) =>
       $isActive &&
@@ -50,20 +51,6 @@ const StyledCarouselButton = styled(Button)<StyledCarouselButtonProps>`
       background-color: var(--clr-dark-blue);
    }
 `;
-
-interface StyledButtonProps {
-   children: React.ReactNode;
-   variant: 'default' | 'carousel';
-   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
-   href?: string;
-   name?: string;
-   value?: string;
-   type?: 'button' | 'submit' | 'reset' | undefined;
-   onClick?: GenericFunction;
-   disabled?: boolean;
-   style?: React.CSSProperties;
-   $isActive?: boolean;
-}
 
 export const StyledButton: React.FC<StyledButtonProps> = ({
    children,

@@ -1,4 +1,4 @@
-import { StyledButton } from '../button/Button';
+import { StyledButton } from '../button/StyledButton';
 
 interface Props {
    children: React.ReactNode;
