@@ -1,9 +1,7 @@
 import styled from 'styled-components';
+import { GenericFunction } from '../../types/globalTypes';
+import { StyledCarouselButton } from '../carouselButtons/CarouselButton.styled';
 
-// todo -> create new comp at bottom to render either carousel button or default based on variant prop
-// type variant prop as keyof
-// pass certain props as link or button | disabled behavior too
-// throw error if carousel btn passed as === a
 // StyledDefaultButton
 // StyledButton (filename change)
 
@@ -29,3 +27,44 @@ export const Button = styled.button`
       background-color: var(--clr-light-grey);
    }
 `;
+
+interface StyledButtonProps {
+   children: React.ReactNode;
+   variant: 'carousel' | 'default';
+   as?: string;
+   href?: string;
+   name?: string;
+   value?: string;
+   type?: 'button' | 'submit' | 'reset' | undefined;
+   onClick?: GenericFunction;
+   disabled?: boolean;
+}
+
+export const StyledButton: React.FC<StyledButtonProps> = ({
+   children,
+   variant,
+   href,
+   name,
+   value,
+   type,
+   onClick,
+   disabled,
+   as,
+   ...props
+}) => {
+   const targetProps =
+      as === 'a'
+         ? {
+              href,
+           }
+         : {
+              name,
+              value,
+              type: type || 'button',
+              onClick,
+              disabled,
+           };
+
+   const Component = variant === 'carousel' ? StyledCarouselButton : Button;
+   return <Component {...{ ...props, ...targetProps }}>{children}</Component>;
+};
