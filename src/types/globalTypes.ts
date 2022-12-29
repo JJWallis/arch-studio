@@ -1,3 +1,1 @@
-export type GenericFunction = <A = any[], B = any>(
-   ...args: A extends any[] ? A : [A]
-) => B;
+export type GenericFunction = <T>(arg: T) => T;

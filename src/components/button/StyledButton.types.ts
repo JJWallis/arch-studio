@@ -1,4 +1,4 @@
-import { GenericFunction } from '../../types/globalTypes';
+import { MouseEventHandler } from 'react';
 
 export interface StyledButtonProps {
    children: React.ReactNode;
@@ -7,8 +7,8 @@ export interface StyledButtonProps {
    href?: string;
    name?: string;
    value?: string;
-   type?: 'button' | 'submit' | 'reset' | undefined;
-   onClick?: GenericFunction;
+   type?: 'button' | 'submit' | 'reset';
+   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
    disabled?: boolean;
    style?: React.CSSProperties;
    $isActive?: boolean;
