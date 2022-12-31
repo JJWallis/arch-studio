@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../config/theme/device';
+import { fontSizes } from '../../config/theme/fontSizes';
 import { ExtraLargeTitle } from '../styled/ExtraLargeTitle';
 import CopySectionWithBorder from './CopySectionWithBorder';
 import { CopySectionWithBorderTitle } from './CopySectionWithBorderTitle';
@@ -23,6 +24,14 @@ const WelcomeTitle = styled(ExtraLargeTitle)`
    position: absolute;
    left: 0;
    bottom: 100%;
+
+   @media ${device.laptop} {
+      --font-size: 220px;
+   }
+
+   @media ${device.laptopL} {
+      --font-size: ${fontSizes.headingExtraLarge};
+   }
 `;
 
 const ContentWrapper = styled.div`
