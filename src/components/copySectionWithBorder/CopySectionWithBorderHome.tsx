@@ -4,21 +4,24 @@ import styled from 'styled-components';
 import { device } from '../../config/theme/device';
 import CopySectionWithBorder from './CopySectionWithBorder';
 import WelcomeImage from '../../../public/assets/home/desktop/image-welcome.jpg';
+import { CopySectionWithBorderTitle } from './CopySectionWithBorderTitle';
 
 const Wrapper = styled(CopySectionWithBorder)`
-   outline: 1px solid black;
    @media ${device.laptop} {
+      --gap: 125px;
       display: grid;
       grid-template-columns: 1fr auto;
+      gap: 125px;
    }
 `;
 
-// todo -> make separate component (used on all pages)
-const Title = styled.h2`
+const Title = styled(CopySectionWithBorderTitle)`
+   outline: 1px solid black;
    margin-bottom: 22px;
-   font-size: var(--fs-heading-small-medium);
-   line-height: var(--lh-heading-small);
-   color: var(--clr-dark-blue);
+
+   @media ${device.tablet} {
+      max-width: 400px;
+   }
 `;
 
 const Paragraph = styled.p`
