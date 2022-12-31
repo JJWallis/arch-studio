@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { device } from '../../config/theme/device';
+import { contentWrapperStyles } from '../styled/ContentWrapperStyles';
 
 type PageVariant = 'home' | 'about' | 'contact';
 
@@ -29,6 +30,7 @@ const Wrapper = styled.section<WrapperProps>`
    padding-top: var(--padding-top);
    padding-inline: var(--padding-x, 0);
    margin-top: var(--margin-top);
+   ${contentWrapperStyles}
 
    &::before {
       content: '';
@@ -58,6 +60,7 @@ const Wrapper = styled.section<WrapperProps>`
 const WrapperHome = styled(Wrapper)`
    @media ${device.tablet} {
       --padding-top: 0;
+      --margin-top: 250px;
       &::before {
          display: none;
       }
