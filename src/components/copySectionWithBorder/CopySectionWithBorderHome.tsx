@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../config/theme/device';
+import { ExtraLargeTitle } from '../styled/ExtraLargeTitle';
 import CopySectionWithBorder from './CopySectionWithBorder';
 import { CopySectionWithBorderTitle } from './CopySectionWithBorderTitle';
 
 const Wrapper = styled(CopySectionWithBorder)`
+   position: relative;
    @media ${device.laptop} {
       --gap: 80px;
       display: grid;
@@ -17,9 +19,15 @@ const Wrapper = styled(CopySectionWithBorder)`
    }
 `;
 
+const WelcomeTitle = styled(ExtraLargeTitle)`
+   position: absolute;
+   left: 0;
+   bottom: 100%;
+`;
+
 const ContentWrapper = styled.div`
    display: grid;
-   justify-items: center;
+   justify-items: right;
 `;
 
 const Content = styled.div`
@@ -59,6 +67,7 @@ const WelcomeImage = styled.div`
 const CopySectionWithBorderHome = () => {
    return (
       <Wrapper variant="home">
+         <WelcomeTitle>Welcome</WelcomeTitle>
          <ContentWrapper>
             <Content>
                <Title>Welcome to Arch Studio</Title>
