@@ -20,7 +20,7 @@ const WelcomeTitle = styled(ExtraLargeTitle)`
    pointer-events: none;
 
    @media ${device.laptop} {
-      bottom: calc(100% - 30px);
+      bottom: calc(100% - 40px);
    }
 `;
 
@@ -41,6 +41,8 @@ const Content = styled.div`
 
 const Title = styled(CopySectionWithBorderTitle)`
    margin-bottom: 22px;
+   position: relative;
+   z-index: 2;
 
    @media ${device.tablet} {
       margin-bottom: 43px;
@@ -52,7 +54,7 @@ const Paragraph = styled.p`
    color: var(--clr-mild-grey);
 
    &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: 30px;
    }
 `;
 

@@ -28,7 +28,7 @@ const FlexCt = styled.div<FlexCtProps>`
       );
       left: 0;
       color: var(--clr-light-grey);
-      letter-spacing: 1ch;
+      letter-spacing: 18px;
       text-transform: uppercase;
       pointer-events: none;
       transform-origin: left;
@@ -57,6 +57,23 @@ const FlexCt = styled.div<FlexCtProps>`
          background-color: var(--clr-light-grey);
       }
    }
+
+   @media ${device.desktopM} {
+      transform: rotateZ(90deg) translateX(-50%)
+         translateY(calc(var(--site-padding)));
+
+      @keyframes slideinvertical {
+         from {
+            transform: rotateZ(90deg) translateX(-100%)
+               translateY(calc(var(--site-padding)));
+         }
+
+         to {
+            transform: rotateZ(90deg) translateX(-50%)
+               translateY(calc(var(--site-padding)));
+         }
+      }
+   }
 `;
 
 interface Props {
@@ -74,7 +91,7 @@ export const HeaderPageHighlighter: React.FC<Props> = ({
    }, [currentPageTitle]);
 
    return (
-      <FlexCt ref={elementRef} aria-hidden elementWidth={elementWidth}>
+      <FlexCt ref={elementRef} elementWidth={elementWidth} aria-hidden>
          {currentPageTitle}
       </FlexCt>
    );
