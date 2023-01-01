@@ -106,6 +106,7 @@ h6 {
 /* PROJECT SPECIFIC STYLES */
 
 :root {
+  /* todo -> convert to rems */
   /* font sizes */
   --fs-body: ${({ theme }) => theme.fontSizes.body};
   --fs-heading-small: ${({ theme }) => theme.fontSizes.headingSmall};
@@ -141,7 +142,7 @@ h6 {
   --site-padding: 25px;
 
   @media ${device.tablet} {
-    --site-padding: clamp(40px, 14vw, 165px);
+    --site-padding: 95px;
     --image-padding: 40px;
   }
 

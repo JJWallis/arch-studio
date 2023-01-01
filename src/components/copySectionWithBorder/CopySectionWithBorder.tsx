@@ -60,14 +60,18 @@ const Wrapper = styled.section<WrapperProps>`
 const WrapperHome = styled(Wrapper)`
    @media ${device.tablet} {
       --padding-top: 0;
-      --margin-top: 250px;
       &::before {
          display: none;
       }
    }
 
    @media ${device.tablet} and ${device.maxLaptop} {
+      --margin-top: 250px;
       --margin-bottom: 233px;
+   }
+
+   @media ${device.laptop} {
+      --margin-top: 210px;
    }
 `;
 
