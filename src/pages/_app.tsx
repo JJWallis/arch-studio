@@ -27,12 +27,17 @@ const Footer = styled.footer`
 
    @media ${device.tablet} and ${device.maxLaptop} {
       --margin-top: 200px;
-      --link-spacing: 66px;
       margin-left: calc(var(--site-padding) * -1);
       margin-right: calc(var(--site-padding) * -1);
    }
 
+   @media ${device.tablet} {
+      --link-spacing: 66px;
+   }
+
    @media ${device.laptop} {
+      --link-spacing: 50px;
+      --nav-logo-width: 200px;
       width: 100%;
       ${contentWrapperStyles}
    }
@@ -46,7 +51,12 @@ const Nav = styled.nav`
    }
 
    @media ${device.tablet} {
-      width: 80%;
+      --width: calc(100% - 150px);
+      width: var(--width);
+   }
+
+   @media ${device.laptop} {
+      --width: calc(100% - 130px);
    }
 `;
 
