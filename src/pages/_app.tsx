@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled, { ThemeProvider } from 'styled-components';
 import { ArrowAndCopyButton } from '../components/button/ArrowAndCopyButton';
 import Header from '../components/header';
+import { contentWrapperStyles } from '../components/styled/ContentWrapperStyles';
 import GlobalStyles from '../components/styled/GlobalStyles';
 import { LogoLink } from '../components/styled/LogoLink';
 import { Theme } from '../config/theme';
@@ -17,29 +18,51 @@ const Footer = styled.footer`
    --nav-logo-width: 120px;
    --margin-top: 72px;
    --link-spacing: 32px;
-   outline: solid;
-   padding-top: 60px;
+   position: relative;
    margin-top: var(--margin-top);
+
+   @media ${device.maxTablet} {
+      padding-top: 60px;
+   }
 
    @media ${device.tablet} and ${device.maxLaptop} {
       --margin-top: 200px;
+      --link-spacing: 66px;
       margin-left: calc(var(--site-padding) * -1);
       margin-right: calc(var(--site-padding) * -1);
+   }
+
+   @media ${device.laptop} {
+      width: 100%;
+      ${contentWrapperStyles}
    }
 `;
 
 const Nav = styled.nav`
-   padding-bottom: 48px;
    background-color: var(--clr-very-light-grey);
+
+   @media ${device.maxTablet} {
+      padding-bottom: 48px;
+   }
+
+   @media ${device.tablet} {
+      width: 80%;
+   }
 `;
 
 const NavList = styled.ul`
    display: flex;
-   flex-direction: column;
-   justify-content: center;
    align-items: center;
    padding: 0;
-   margin: 0%;
+   margin: 0;
+   @media ${device.maxTablet} {
+      justify-content: center;
+      flex-direction: column;
+   }
+
+   @media ${device.tablet} {
+      gap: var(--link-spacing);
+   }
 `;
 
 // todo -> icon component + change size
@@ -47,9 +70,11 @@ const NavListItem = styled.li`
    color: var(--clr-mild-grey);
    font-weight: 500;
 
-   &:first-child {
-      margin-top: calc(var(--nav-logo-width) / 2 * -1);
-      margin-bottom: var(--link-spacing);
+   @media ${device.maxTablet} {
+      &:first-child {
+         margin-top: calc(var(--nav-logo-width) / 2 * -1);
+         margin-bottom: var(--link-spacing);
+      }
    }
 `;
 
@@ -67,7 +92,18 @@ const NavLinkLogo = styled(LogoLink)`
 
 const NavLink = styled(Link)`
    display: inline-block;
-   padding-bottom: var(--link-spacing);
+   @media ${device.maxTablet} {
+      padding-bottom: var(--link-spacing);
+   }
+`;
+
+const StyledPortfolioButton = styled(ArrowAndCopyButton)`
+   @media ${device.tablet} {
+      position: absolute;
+      top: 50;
+      transform: translateY(-50%);
+      right: 0;
+   }
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -94,9 +130,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                      <NavLink href={ROUTE_CONTACT}>Contact</NavLink>
                   </NavListItem>
                   <NavListItem>
-                     <ArrowAndCopyButton href={ROUTE_PORTFOLIO}>
+                     <StyledPortfolioButton href={ROUTE_PORTFOLIO}>
                         See Our Portfolio
-                     </ArrowAndCopyButton>
+                     </StyledPortfolioButton>
                   </NavListItem>
                </NavList>
             </Nav>
