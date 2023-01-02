@@ -14,7 +14,9 @@ import {
 } from '../constants/routes';
 
 const Footer = styled.footer`
+   --nav-logo-width: 120px;
    --margin-top: 72px;
+   --link-spacing: 32px;
    outline: solid;
    padding-top: 60px;
    margin-top: var(--margin-top);
@@ -44,14 +46,18 @@ const NavList = styled.ul`
 const NavListItem = styled.li`
    color: var(--clr-mild-grey);
    font-weight: 500;
+
+   &:first-child {
+      margin-top: calc(var(--nav-logo-width) / 2 * -1);
+      margin-bottom: var(--link-spacing);
+   }
 `;
 
 const NavLinkLogo = styled(LogoLink)`
-   --width: 120px;
    display: grid;
    place-items: center;
-   width: var(--width);
-   height: var(--width);
+   width: var(--nav-logo-width);
+   height: var(--nav-logo-width);
    background-color: black;
 
    path {
@@ -61,7 +67,7 @@ const NavLinkLogo = styled(LogoLink)`
 
 const NavLink = styled(Link)`
    display: inline-block;
-   padding-bottom: 32px;
+   padding-bottom: var(--link-spacing);
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
