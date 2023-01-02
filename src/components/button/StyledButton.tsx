@@ -10,7 +10,8 @@ export const Button = styled.button`
    justify-content: center;
    align-items: center;
    gap: 20px;
-   padding: 20px;
+   max-width: 100%;
+   padding: 25px 34px 22px; // todo -> convert to ems
    font-weight: var(--fw-medium);
    background-color: var(--clr-dark-blue);
    color: white;

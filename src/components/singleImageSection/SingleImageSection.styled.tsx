@@ -3,7 +3,7 @@ import { device } from '../../config/theme/device';
 import { contentWrapperStyles } from '../styled/ContentWrapperStyles';
 
 export interface StyledWrapperProps {
-   isPrimaryVariant: boolean;
+   isPrimaryVariant?: boolean;
    imageSourceMobile: string;
    imageSourceDesktop: string;
 }
@@ -32,7 +32,7 @@ export const StyledWrapper = styled.article.attrs<StyledWrapperProps>(
       display: block;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.4);
       grid-column: 1 / -1;
       grid-row: 1 / -1;
    }
@@ -42,9 +42,10 @@ export const Content = styled.div`
    grid-column: 1 / -1;
    grid-row: 1 / -1;
    align-self: center;
+   width: 100%;
    max-width: 600px;
-   margin-inline: auto;
    padding-block: 10px;
+   margin-inline: auto;
    @media ${device.maxTablet} {
       padding-inline: var(--site-padding);
    }
@@ -57,16 +58,16 @@ export const Content = styled.div`
 export const Title = styled.h1`
    margin-bottom: 10px;
    color: white;
-   font-size: var(--fs-heading-small-medium);
+   font-size: clamp(
+      var(--fs-heading-small-medium),
+      12vw,
+      var(--fs-heading-medium)
+   );
    line-height: var(--lh-heading-medium);
-
-   @media ${device.tablet} {
-      font-size: var(--fs-heading-medium);
-   }
 `;
 
 export const Description = styled.p`
    width: 90%;
-   margin-bottom: 3em;
+   margin-bottom: 41px;
    color: white;
 `;

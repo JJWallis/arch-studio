@@ -30,6 +30,7 @@ const Wrapper = styled.section<WrapperProps>`
    padding-top: var(--padding-top);
    padding-inline: var(--padding-x, 0);
    margin-top: var(--margin-top);
+   margin-bottom: var(--margin-bottom);
    ${contentWrapperStyles}
 
    &::before {
