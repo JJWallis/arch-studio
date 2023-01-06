@@ -5,8 +5,9 @@ import { device } from '../../config/theme/device';
 import { ROUTE_PORTFOLIO } from '../../constants/routes';
 import { ArrowAndCopyButton } from '../button/ArrowAndCopyButton';
 import { contentWrapperStyles } from '../styled/ContentWrapperStyles';
-import StaticImage from '../../../public/assets/portfolio/mobile/image-228b.jpg';
+import StaticImage from '../../../public/assets/portfolio/tablet/image-228b.jpg';
 import Link from 'next/link';
+import { ExtraLargeTitle } from '../styled/ExtraLargeTitle';
 
 const Wrapper = styled.section`
    ${contentWrapperStyles}
@@ -45,9 +46,14 @@ const SeeAllButton = styled(ArrowAndCopyButton)`
 const Gallery = styled.div.attrs({ role: 'grid' })`
    display: grid;
    grid-template-columns: 1fr;
+
+   @media ${device.laptop} {
+      grid-template-columns: repeat(3, 1fr);
+   }
 `;
 
 const GalleryPiece = styled.div.attrs({ role: 'grid-cell' })`
+   position: relative;
    display: grid;
    grid-template-columns: 1fr;
 
@@ -93,6 +99,14 @@ const GalleryPieceLink = styled(Link)`
    color: white;
 `;
 
+const GalleryImageNumber = styled(ExtraLargeTitle)`
+   position: absolute;
+   top: 30px;
+   right: 16px;
+   --font-size: var(--fs-heading-xl);
+   opacity: 50%;
+`;
+
 const Featured: React.FC = () => (
    <Wrapper>
       <Header>
@@ -100,6 +114,25 @@ const Featured: React.FC = () => (
          <SeeAllButton href={ROUTE_PORTFOLIO}>See All</SeeAllButton>
       </Header>
       <Gallery>
+         <GalleryPiece>
+            <GalleryPieceImage src={StaticImage} alt="" />
+            <GalleryPieceContent>
+               <GalleryPieceTitle>228B Tower</GalleryPieceTitle>
+               <GalleryPieceLink href={ROUTE_PORTFOLIO}>
+                  View All Projects
+               </GalleryPieceLink>
+            </GalleryPieceContent>
+            <GalleryImageNumber aria-hidden>1</GalleryImageNumber>
+         </GalleryPiece>
+         <GalleryPiece>
+            <GalleryPieceImage src={StaticImage} alt="" />
+            <GalleryPieceContent>
+               <GalleryPieceTitle>228B Tower</GalleryPieceTitle>
+               <GalleryPieceLink href={ROUTE_PORTFOLIO}>
+                  View All Projects
+               </GalleryPieceLink>
+            </GalleryPieceContent>
+         </GalleryPiece>
          <GalleryPiece>
             <GalleryPieceImage src={StaticImage} alt="" />
             <GalleryPieceContent>
