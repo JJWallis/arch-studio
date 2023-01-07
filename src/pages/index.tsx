@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import CopySectionWithBorderHome from '../components/copySectionWithBorder/CopySectionWithBorderHome';
-import Featured from '../components/Featured';
+import Featured from '../components/featured';
 import { SingleImageSectionHeroHomeRenderer } from '../components/singleImageSection/SingleImageSectionHeroHomeRenderer';
 import { SmallTeamSection } from '../components/singleImageSection/SmallTeamSection';
 
