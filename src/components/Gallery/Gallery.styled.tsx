@@ -8,6 +8,7 @@ export const GalleryContainer = styled.div.attrs({ role: 'grid' })`
    --template-columns: 1fr;
    display: grid;
    grid-template-columns: var(--template-columns);
+   gap: 24px;
 
    @media ${device.laptop} {
       --template-columns: repeat(3, 1fr);
@@ -19,21 +20,41 @@ type GalleryPieceProps = { imageSourceTitle: imageSourceTitle };
 export const GalleryPiece = styled.div.attrs({
    role: 'grid-cell',
 })<GalleryPieceProps>`
+   --bg-image-src: url(${({ imageSourceTitle }) =>
+      `/assets/portfolio/mobile/${imageSourceTitle}`});
+   --min-height: 260px;
    position: relative;
    display: grid;
    grid-template-columns: 1fr;
+   min-height: var(--min-height);
+   background-image: var(--bg-image-src);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
 
    &::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-color: rgba(0, 0, 0, 0.15);
+      background-color: rgba(0, 0, 0, 0.2);
       pointer-events: none;
+   }
+
+   @media ${device.tablet} {
+      --bg-image-src: url(${({ imageSourceTitle }) =>
+         `/assets/portfolio/tablet/${imageSourceTitle}`});
+   }
+
+   @media ${device.laptop} {
+      --min-height: 560px;
+      --bg-image-src: url(${({ imageSourceTitle }) =>
+         `/assets/portfolio/desktop/${imageSourceTitle}`});
    }
 `;
 
 export const GalleryPieceContent = styled.div`
-   --padding: 0 0 5% 7%;
+   --spacing: ${24 / 16}rem;
+   --padding: 0 0 var(--spacing) var(--spacing);
    position: relative;
    z-index: 2;
    grid-column: 1 / -1;
@@ -42,7 +63,7 @@ export const GalleryPieceContent = styled.div`
    padding: var(--padding);
 
    @media ${device.tablet} {
-      --padding: 0 0 40px 40px;
+      --spacing: ${40 / 16}rem;
    }
 `;
 
@@ -62,4 +83,9 @@ export const GalleryImageNumber = styled(ExtraLargeTitle)`
    right: 16px;
    --font-size: var(--fs-heading-xl);
    opacity: 50%;
+   pointer-events: none;
+
+   @media ${device.laptop} {
+      right: -14px;
+   }
 `;

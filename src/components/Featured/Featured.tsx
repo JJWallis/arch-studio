@@ -1,13 +1,10 @@
-import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../config/theme/device';
 import { ROUTE_PORTFOLIO } from '../../constants/routes';
 import { ArrowAndCopyButton } from '../button/ArrowAndCopyButton';
 import { contentWrapperStyles } from '../styled/ContentWrapperStyles';
-import StaticImage from '../../../public/assets/portfolio/tablet/image-228b.jpg';
-import Link from 'next/link';
-import { ExtraLargeTitle } from '../styled/ExtraLargeTitle';
+import GalleryFeatured from '../Gallery/GalleryFeatured';
 
 const Wrapper = styled.section`
    ${contentWrapperStyles}
@@ -18,19 +15,22 @@ const Wrapper = styled.section`
 `;
 
 const Header = styled.header`
+   --margin-bottom: 43px;
    display: flex;
    justify-content: space-between;
    align-items: center;
+   margin-bottom: var(--margin-bottom);
+
+   @media ${device.tablet} {
+      --margin-bottom: 85px;
+   }
 `;
 
 const Title = styled.h2`
-   --margin-bottom: 43px;
-   margin-bottom: var(--margin-bottom);
    font-size: var(--fs-heading-small-medium);
    font-weight: var(--fw-bold);
 
    @media ${device.tablet} {
-      --margin-bottom: 0;
       position: relative;
       top: 7px;
       font-size: var(--fs-heading-medium);
@@ -49,6 +49,7 @@ const Featured: React.FC = () => (
          <Title>Featured</Title>
          <SeeAllButton href={ROUTE_PORTFOLIO}>See All</SeeAllButton>
       </Header>
+      <GalleryFeatured />
    </Wrapper>
 );
 
