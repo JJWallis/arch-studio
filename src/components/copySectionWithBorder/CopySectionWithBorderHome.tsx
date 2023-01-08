@@ -6,6 +6,7 @@ import CopySectionWithBorder from './CopySectionWithBorder';
 import { CopySectionWithBorderTitle } from './CopySectionWithBorderTitle';
 
 const Wrapper = styled(CopySectionWithBorder)`
+   isolation: isolate;
    @media ${device.laptop} {
       display: grid;
       grid-template-columns: minmax(400px, 1fr) minmax(200px, 350px); // 350px === welcome image native width

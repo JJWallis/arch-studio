@@ -4,7 +4,7 @@ import { device } from '../../config/theme/device';
 import { ROUTE_PORTFOLIO } from '../../constants/routes';
 import { ArrowAndCopyButton } from '../button/ArrowAndCopyButton';
 import { contentWrapperStyles } from '../styled/ContentWrapperStyles';
-import GalleryFeatured from '../Gallery/GalleryFeatured';
+import GalleryFeatured from '../gallery/GalleryFeatured';
 
 const Wrapper = styled.section`
    ${contentWrapperStyles}
